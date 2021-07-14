@@ -31,6 +31,15 @@ a {
     color: #3bc4a1;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 #header {
     background-color: #3bc4a1;
     position: fixed;
@@ -74,12 +83,26 @@ a {
 
 .hover{
     position: absolute;
-    top: 28px;
+    top: 40px;
     left: -84px;
     width: 844px;
     height: 472px;
     background-color: #fff;
     display: none;
+    animation: fadeIn ease-in 0.3s;
+    border-radius: 36px;
+    background: #e0e0e0;
+    box-shadow:  5px 5px 10px #bcbcbc,
+                 -5px -5px 10px #ffffff;
+}
+
+.hover::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 20px;
+    top: -16px;
+    /* background-color: #fb7051; */
 }
 
 .nav__hover {
@@ -92,7 +115,6 @@ a {
 
 .nav__hover-left {
     flex: 1;
-    background-color: #f0fbf8;
 }
 
 .right__text {
@@ -105,6 +127,11 @@ a {
     display: flex;
     justify-content: space-evenly;
     padding: 10px 0;
+}
+
+.right__text:hover,
+.left__text:hover {
+    cursor: auto;
 }
 
 .right__text-lists:hover,
@@ -208,11 +235,13 @@ a {
     font-size: 16px;
     border-radius: 40px;
     background-color: #fb7051;
+    transition: 0.2s;
 }
 
 .office__conect:hover,
 .nav__conect:hover {
-    opacity: 0.8;
+    color: #fb7051;
+    background-color: #6fdec8;
 }
 
 .content {
@@ -248,6 +277,7 @@ a {
     border-radius: 40px;
     font-size: 16px;
     line-height: 50px;
+    transition: 0.2s;
 }
 
 .content__img {
@@ -312,6 +342,7 @@ a {
     padding: 14px 20px;
     font-size: 18px;
     color: #3bc4a1;
+    transition: 0.4s;
 }
 
 .sec__conect:hover {
@@ -370,6 +401,11 @@ a {
     border-radius: 50px;
     line-height: 44px;
     font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer__header-choice:hover {
+    color: #000;
 }
 
 .footer__list {
